@@ -1,3 +1,13 @@
+import LikeButton from "@/ui/button/like-button";
+import ClientNewEntry from "./ClientNewEntry";
+
 export default function NewEntry() {
-    return <h1>This is where you can add a new entry</h1>
+    return (
+        <>
+            <ClientNewEntry />;
+            <LikeButton likes={10} />
+        </>
+    )
+
+
 }
