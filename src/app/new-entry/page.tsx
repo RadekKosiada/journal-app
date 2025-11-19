@@ -1,4 +1,4 @@
-import Tiptap from "@/ui/tiptap";
+import Tiptap from "@/components/ui/tiptap";
 import ClientNewEntry from "./ClientNewEntry";
 
 export default function NewEntry() {
