@@ -1,4 +1,3 @@
-import styles from "./menu-bar.module.scss";
 import { Editor } from '@tiptap/react';
 
 const MenuBar = ({ editor }: { editor: Editor | null }) => {
@@ -44,6 +43,44 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
                     className={editor.isActive('italic') ? 'is-active' : ''}
                 >
                     Italic
+                </button>
+                <button
+                    onClick={() => editor.commands.undo()}
+                    className={''}
+                >
+                    Undo
+                </button>
+                <button
+                    onClick={() => editor.commands.redo()}
+                    className={''}
+                >
+                    Redo
+                </button>
+                <br />
+
+                <button
+                    onClick={() => editor.chain().focus().toggleTaskList().run()}
+                    className={editor.isActive('taskList') ? 'is-active' : ''}
+                >
+                    Toggle task list
+                </button>
+                <button
+                    onClick={() => editor.chain().focus().splitListItem('taskItem').run()}
+                    disabled={editor.can().splitListItem('taskItem')}
+                >
+                    Create a new Todo
+                </button>
+                <button
+                    onClick={() => editor.chain().focus().sinkListItem('taskItem').run()}
+                    disabled={editor.can().sinkListItem('taskItem')}
+                >
+                    Nest Todo
+                </button>
+                <button
+                    onClick={() => editor.chain().focus().liftListItem('taskItem').run()}
+                    disabled={editor.can().liftListItem('taskItem')}
+                >
+                    Align Todo
                 </button>
 
 

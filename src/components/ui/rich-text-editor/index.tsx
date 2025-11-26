@@ -1,4 +1,6 @@
 'use client';
+import { TaskItem, TaskList } from '@tiptap/extension-list';
+import { Placeholder } from '@tiptap/extensions';
 import styles from "./rich-text-editor.module.scss";
 
 import { EditorContent, useEditor } from '@tiptap/react';
@@ -7,8 +9,17 @@ import MenuBar from './menu-bar';
 
 const Tiptap = () => {
     const editor = useEditor({
-        extensions: [StarterKit],
-        content: "Add your new entry here...",
+        extensions: [
+            StarterKit,
+            Placeholder.configure({
+                placeholder: 'Write something …',
+            }),
+            TaskList,
+            TaskItem.configure({
+                nested: true,
+            }),
+        ],
+        // content: "",
         immediatelyRender: false
     })
 
