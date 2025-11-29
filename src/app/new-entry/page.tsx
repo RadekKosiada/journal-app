@@ -1,4 +1,4 @@
-import RichTextEditor from "@/components/ui/rich-text-editor";
+import RichTextEditor from "@/components/rich-text-editor";
 import ClientNewEntry from "./client-new-entry";
 
 export default function NewEntry() {

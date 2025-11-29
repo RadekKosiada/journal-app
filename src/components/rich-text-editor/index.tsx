@@ -3,9 +3,10 @@ import { TaskItem, TaskList } from '@tiptap/extension-list';
 import { Placeholder } from '@tiptap/extensions';
 import styles from "./rich-text-editor.module.scss";
 
+import { cn } from '@/lib/utils';
 import { EditorContent, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
-import MenuBar from './menu-bar';
+import MenuBar from '../rte-menu-bar';
 
 const RichTextEditor = () => {
     const editor = useEditor({
@@ -26,7 +27,8 @@ const RichTextEditor = () => {
     return (
         <>
             <MenuBar editor={editor} />
-            <EditorContent editor={editor} className={styles.rteEditor} />
+            <EditorContent editor={editor} className={cn("", styles.rteEditor)} />
+
         </>
     )
 }
