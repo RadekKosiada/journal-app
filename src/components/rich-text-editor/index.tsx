@@ -5,7 +5,7 @@ import styles from "./rich-text-editor.module.scss";
 
 import { EditorContent, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
-import MenuBar from '../menu-bar';
+import MenuBar from '../rte-menu-bar';
 
 const RichTextEditor = () => {
     const editor = useEditor({
