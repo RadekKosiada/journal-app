@@ -1,92 +1,64 @@
+import { Button } from "@/components/ui/button";
+import { ButtonGroup } from "@/components/ui/button-group";
 import { Editor } from '@tiptap/react';
+import { Redo2, Undo2 } from "lucide-react";
 
 const MenuBar = ({ editor }: { editor: Editor | null }) => {
     if (!editor) {
-        return null
+        return null;
     }
 
     return (
-        <div className="control-group">
-            <div className="button-group">
-                <button
-                    onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
-                    className={editor.isActive('heading', { level: 1 }) ? 'is-active' : ''}
-                >
-                    H1
-                </button>
-                <button
-                    onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
-                    className={editor.isActive('heading', { level: 2 }) ? 'is-active' : ''}
-                >
-                    H2
-                </button>
-                <button
-                    onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
-                    className={editor.isActive('heading', { level: 3 }) ? 'is-active' : ''}
-                >
-                    H3
-                </button>
-                <button
-                    onClick={() => editor.chain().focus().setParagraph().run()}
-                    className={editor.isActive('paragraph') ? 'is-active' : ''}
-                >
-                    Paragraph
-                </button>
-                <button
-                    onClick={() => editor.chain().focus().toggleBold().run()}
-                    className={editor.isActive('bold') ? 'is-active' : ''}
-                >
-                    Bold
-                </button>
-                <button
-                    onClick={() => editor.chain().focus().toggleItalic().run()}
-                    className={editor.isActive('italic') ? 'is-active' : ''}
-                >
-                    Italic
-                </button>
-                <button
-                    onClick={() => editor.commands.undo()}
-                    className={''}
-                >
-                    Undo
-                </button>
-                <button
-                    onClick={() => editor.commands.redo()}
-                    className={''}
-                >
-                    Redo
-                </button>
-                <br />
+        <ButtonGroup aria-label="Menu Bar">
+            <div className="flex flex-col items-start gap-y-2 px-2">
+                <div className="flex flex-row items-start gap-2">
+                    <ButtonGroup aria-label="adjust typography">
+                        <Button variant="outline" onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}>H1</Button>
+                        <Button variant="outline" onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}>H2</Button>
+                        <Button variant={"outline"} onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}>H3</Button>
+                        <Button variant={"outline"} onClick={() => editor.chain().focus().setParagraph().run()}>Paragraph</Button>
+                        <Button variant="outline" onClick={() => editor.chain().focus().toggleBold().run()}>Bold</Button>
+                        <Button variant={"outline"} onClick={() => editor.chain().focus().toggleItalic().run()}>Italic</Button>
+                    </ButtonGroup>
 
-                <button
-                    onClick={() => editor.chain().focus().toggleTaskList().run()}
-                    className={editor.isActive('taskList') ? 'is-active' : ''}
-                >
-                    Toggle task list
-                </button>
-                <button
-                    onClick={() => editor.chain().focus().splitListItem('taskItem').run()}
-                    disabled={editor.can().splitListItem('taskItem')}
-                >
-                    Create a new Todo
-                </button>
-                <button
-                    onClick={() => editor.chain().focus().sinkListItem('taskItem').run()}
-                    disabled={editor.can().sinkListItem('taskItem')}
-                >
-                    Nest Todo
-                </button>
-                <button
-                    onClick={() => editor.chain().focus().liftListItem('taskItem').run()}
-                    disabled={editor.can().liftListItem('taskItem')}
-                >
-                    Align Todo
-                </button>
+                    <ButtonGroup aria-label="undo redo">
+                        <Button onClick={() => editor.commands.undo()} size="icon" variant={"outline"}><Undo2 /> </Button>
+                        <Button onClick={() => editor.commands.redo()} size="icon" variant={"outline"} ><Redo2 /></Button>
+                    </ButtonGroup>
+                </div>
 
-
+                <ButtonGroup aria-label="manage list">
+                    <Button variant={"outline"}
+                        onClick={() => editor.chain().focus().toggleTaskList().run()}
+                        className={editor.isActive('taskList') ? 'is-active' : ''}
+                    >
+                        Toggle task list
+                    </Button>
+                    <Button variant={"outline"}
+                        onClick={() => editor.chain().focus().splitListItem('taskItem').run()}
+                        disabled={editor.can().splitListItem('taskItem')}
+                    >
+                        Create a new Todo
+                    </Button>
+                    <Button variant={"outline"}
+                        onClick={() => editor.chain().focus().sinkListItem('taskItem').run()}
+                        disabled={editor.can().sinkListItem('taskItem')}
+                    >
+                        Nest Todo
+                    </Button>
+                    <Button variant={"outline"}
+                        onClick={() => editor.chain().focus().liftListItem('taskItem').run()}
+                        disabled={editor.can().liftListItem('taskItem')}
+                    >
+                        Align Todo
+                    </Button>
+                </ButtonGroup>
             </div>
-        </div>
-    )
+        </ButtonGroup >
+    );
 }
 
 export default MenuBar;
+
+
+
