@@ -7,7 +7,7 @@ import { EditorContent, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import MenuBar from './menu-bar';
 
-const Tiptap = () => {
+const RichTextEditor = () => {
     const editor = useEditor({
         extensions: [
             StarterKit,
@@ -31,4 +31,4 @@ const Tiptap = () => {
     )
 }
 
-export default Tiptap;
+export default RichTextEditor;
