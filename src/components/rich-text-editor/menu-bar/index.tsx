@@ -17,13 +17,13 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
                         <Button variant="outline" onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}>H2</Button>
                         <Button variant={"outline"} onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}>H3</Button>
                         <Button variant={"outline"} onClick={() => editor.chain().focus().setParagraph().run()}>Paragraph</Button>
-                        <Button variant="outline" onClick={() => editor.chain().focus().toggleBold().run()}>Bold</Button>
-                        <Button variant={"outline"} onClick={() => editor.chain().focus().toggleItalic().run()}>Italic</Button>
+                        <Button variant="outline" onClick={() => editor.chain().focus().toggleBold().run()}><strong>Bold</strong></Button>
+                        <Button variant={"outline"} onClick={() => editor.chain().focus().toggleItalic().run()}><em>Italic</em></Button>
                     </ButtonGroup>
 
                     <ButtonGroup aria-label="undo redo">
-                        <Button onClick={() => editor.commands.undo()} size="icon" variant={"outline"}><Undo2 /> </Button>
-                        <Button onClick={() => editor.commands.redo()} size="icon" variant={"outline"} ><Redo2 /></Button>
+                        <Button onClick={() => editor.commands.undo()} size="icon" variant={"outline"} title="Undo"><Undo2 /> </Button>
+                        <Button onClick={() => editor.commands.redo()} size="icon" variant={"outline"} title="Redo"><Redo2 /></Button>
                     </ButtonGroup>
                 </div>
 
