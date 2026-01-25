@@ -5,7 +5,7 @@ import { ButtonLink } from "../ui/link";
 import styles from "./breadcrumb.module.scss";
 
 
-const Breadcrumb = ({ breadcrumbData }: { breadcrumbData: BreadcrumbDataType }) => {
+const BreadcrumbTest = ({ breadcrumbData }: { breadcrumbData: BreadcrumbDataType }) => {
 
     return (
         <nav aria-label="breadcrumbs" className={styles.breadcrumb}>
@@ -23,4 +23,4 @@ const Breadcrumb = ({ breadcrumbData }: { breadcrumbData: BreadcrumbDataType }) 
         </nav >
     )
 }
-export default Breadcrumb;
+export default BreadcrumbTest;
