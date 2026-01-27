@@ -1,10 +1,6 @@
-.breadcrumb {
-  outline: 3px dashed red;
-}
-
 .breadcrumbItem {
   &:last-of-type {
-    .BreadcrumbSeparator {
+    .breadcrumbSeparator {
       display: none;
     }
   }

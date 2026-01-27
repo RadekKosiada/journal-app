@@ -16,7 +16,7 @@ export function BreadcrumbBasic({ breadcrumbData }: { breadcrumbData: Breadcrumb
                     breadcrumbData instanceof Array && breadcrumbData.map((item, index) => (
                         <BreadcrumbItem key={index} className={styles.breadcrumbItem}>
                             <BreadcrumbLink href={item.url} className={styles.breadcrumbLink}>{item.label}</BreadcrumbLink>
-                            <BreadcrumbSeparator className={styles.BreadcrumbSeparator} />
+                            <BreadcrumbSeparator className={styles.breadcrumbSeparator} />
                         </BreadcrumbItem>
                     ))
                 }
