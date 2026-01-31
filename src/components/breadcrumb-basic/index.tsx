@@ -6,7 +6,7 @@ import {
     BreadcrumbSeparator
 } from "@/components/ui/breadcrumb";
 import { BreadcrumbDataType } from "@/types/BreadcrumbDataType";
-import styles from "./breadcrumb.module.scss";
+import styles from "./breadcrumb-basic.module.scss";
 
 export function BreadcrumbBasic({ breadcrumbData }: { breadcrumbData: BreadcrumbDataType }) {
     return (
