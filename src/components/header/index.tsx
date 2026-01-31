@@ -1,13 +1,25 @@
+import { PAGE_LABELS } from "@/lib/pageLabels";
 import { ROUTES } from "@/lib/routes";
 import BreadcrumbBasic from "../breadcrumb-basic";
 import NavigationBasic from "../navigation-basic/navigation-basic";
 
-const Header = () => {
+const Header = ({ pageLabel }: { pageLabel: string }) => {
 
     const breadcrumbData = [
-        { order: 1, current: false, url: ROUTES.HOME, label: "Home" },
-        { order: 2, current: true, url: ROUTES.NEW_ENTRY, label: "New Entry" }
+        {
+            order: 1,
+            current: pageLabel === PAGE_LABELS.HOME,
+            url: ROUTES.HOME,
+            label: PAGE_LABELS.HOME
+        },
+        {
+            order: 2,
+            current: pageLabel === PAGE_LABELS.NEW_ENTRY,
+            url: ROUTES.NEW_ENTRY,
+            label: PAGE_LABELS.NEW_ENTRY
+        }
     ];
+
     return (
         <header className={"mb-8"}>
             <NavigationBasic breadcrumbData={breadcrumbData} />
