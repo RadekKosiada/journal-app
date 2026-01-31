@@ -7,13 +7,11 @@ const Header = ({ pageLabel }: { pageLabel: string }) => {
 
     const breadcrumbData = [
         {
-            order: 1,
             current: pageLabel === PAGE_LABELS.HOME,
             url: ROUTES.HOME,
             label: PAGE_LABELS.HOME
         },
         {
-            order: 2,
             current: pageLabel === PAGE_LABELS.NEW_ENTRY,
             url: ROUTES.NEW_ENTRY,
             label: PAGE_LABELS.NEW_ENTRY
