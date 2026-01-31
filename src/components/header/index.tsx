@@ -1,5 +1,5 @@
 import { ROUTES } from "@/lib/routes";
-import BreadcrumbBasic from "../breadrumb";
+import BreadcrumbBasic from "../breadcrumb-basic";
 import styles from "./header.module.scss";
 
 const Header = () => {
