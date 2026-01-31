@@ -1,11 +1,1 @@
-.breadcrumbItem {
-  &:last-of-type {
-    .breadcrumbSeparator {
-      display: none;
-    }
-  }
-}
 
-.breadcrumbItemCurrent {
-  color: var(--foreground);
-}
