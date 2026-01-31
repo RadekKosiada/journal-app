@@ -1,7 +1,6 @@
 import { ROUTES } from "@/lib/routes";
 import BreadcrumbBasic from "../breadcrumb-basic";
 import NavigationBasic from "../navigation-basic/navigation-basic";
-import styles from "./header.module.scss";
 
 const Header = () => {
 
@@ -10,9 +9,9 @@ const Header = () => {
         { order: 2, current: true, url: ROUTES.NEW_ENTRY, label: "New Entry" }
     ];
     return (
-        <header className={styles.header}>
-            <NavigationBasic className={styles.mainNavigation} breadcrumbData={breadcrumbData} />
-            <BreadcrumbBasic className={styles.breadcrumbBasic} breadcrumbData={breadcrumbData} />
+        <header className={"mb-8"}>
+            <NavigationBasic breadcrumbData={breadcrumbData} />
+            <BreadcrumbBasic breadcrumbData={breadcrumbData} />
         </header>
     );
 };
