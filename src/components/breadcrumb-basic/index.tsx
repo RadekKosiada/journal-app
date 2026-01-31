@@ -8,9 +8,9 @@ import {
 import { BreadcrumbDataType } from "@/types/BreadcrumbDataType";
 import styles from "./breadcrumb-basic.module.scss";
 
-export function BreadcrumbBasic({ breadcrumbData }: { breadcrumbData: BreadcrumbDataType }) {
+export function BreadcrumbBasic({ className, breadcrumbData }: { className?: string; breadcrumbData: BreadcrumbDataType }) {
     return (
-        <Breadcrumb className={styles.breadcrumb}>
+        <Breadcrumb className={className}>
             <BreadcrumbList className={styles.breadcrumbList}>
                 {
                     breadcrumbData instanceof Array && breadcrumbData.map((item, index) => (

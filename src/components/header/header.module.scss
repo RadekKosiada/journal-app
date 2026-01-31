@@ -1,0 +1,8 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  .mainNavigation {
+    justify-self: end;
+    align-self: flex-end;
+  }
+}

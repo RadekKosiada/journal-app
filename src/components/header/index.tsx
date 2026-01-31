@@ -11,8 +11,8 @@ const Header = () => {
     ];
     return (
         <header className={styles.header}>
-            <NavigationBasic breadcrumbData={breadcrumbData} />
-            <BreadcrumbBasic breadcrumbData={breadcrumbData} />
+            <NavigationBasic className={styles.mainNavigation} breadcrumbData={breadcrumbData} />
+            <BreadcrumbBasic className={styles.breadcrumbBasic} breadcrumbData={breadcrumbData} />
         </header>
     );
 };
