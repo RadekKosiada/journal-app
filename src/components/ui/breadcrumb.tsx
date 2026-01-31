@@ -21,11 +21,13 @@ function BreadcrumbList({ className, ...props }: React.ComponentProps<"ol">) {
     )
 }
 
-function BreadcrumbItem({ className, ...props }: React.ComponentProps<"li">) {
+function BreadcrumbItem({ className, current, ...props }: React.ComponentProps<"li"> & { current?: boolean }) {
+    const classesForNotCurrentItem = "underline decoration-solid decoration-1";
+    const classesForCurrentItem = "text-foreground font-medium";
     return (
         <li
             data-slot="breadcrumb-item"
-            className={cn("inline-flex items-center gap-1.5", className)}
+            className={cn("inline-flex items-center gap-1.5", className, current ? classesForCurrentItem : classesForNotCurrentItem)}
             {...props}
         />
     )
