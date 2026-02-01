@@ -1,11 +1,12 @@
-import { ButtonLink } from "@/components/ui/link";
+import Header from "@/components/header";
+import { PAGE_LABELS } from "@/lib/pageLabels";
 
 export default function Home() {
     return (
         <>
-            <h1>this is Home Page</h1>
-            <ButtonLink variant="link" href="/new-entry">Go to New Entry Page</ButtonLink>
+            <Header pageLabel={PAGE_LABELS.HOME} />
+            <h1>this is Home Page&#39;s Headline</h1>
         </>
 
     );
-}
+};
