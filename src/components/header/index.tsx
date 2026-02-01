@@ -15,6 +15,11 @@ const Header = ({ pageLabel }: { pageLabel: string }) => {
             current: pageLabel === PAGE_LABELS.NEW_ENTRY,
             url: ROUTES.NEW_ENTRY,
             label: PAGE_LABELS.NEW_ENTRY
+        },
+        {
+            current: pageLabel === PAGE_LABELS.LOGIN_PAGE,
+            url: ROUTES.LOGIN_PAGE,
+            label: PAGE_LABELS.LOGIN_PAGE
         }
     ];
 
