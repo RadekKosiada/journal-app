@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
     Field,
@@ -22,17 +24,19 @@ export function LoginForm() {
                         <FieldGroup>
                             <Field>
                                 <FieldLabel htmlFor="username">Username</FieldLabel>
-                                <Input id="username" type="text" autoComplete="false" placeholder="Max Leiter" />
-                                <FieldDescription>
-                                    Enter your e-mail address.
-                                </FieldDescription>
-                            </Field>
-                            <Field>
-                                <FieldLabel htmlFor="email">Email</FieldLabel>
-                                <Input id="email" type="email" autoComplete="false" placeholder="your email" />
                                 <FieldDescription>
                                     Choose a unique username for your account.
                                 </FieldDescription>
+                                <Input id="username" type="text" autoComplete="false" placeholder="Max Leiter" />
+
+                            </Field>
+                            <Field>
+                                <FieldLabel htmlFor="email">Email</FieldLabel>
+                                <FieldDescription>
+                                    Enter your e-mail address.
+                                </FieldDescription>
+                                <Input id="email" type="email" autoComplete="false" placeholder="your email" />
+
                             </Field>
                             <Field>
                                 <FieldLabel htmlFor="password">Password</FieldLabel>
