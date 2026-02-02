@@ -20,6 +20,11 @@ const Header = ({ pageLabel }: { pageLabel: string }) => {
             current: pageLabel === PAGE_LABELS.LOGIN_PAGE,
             url: ROUTES.LOGIN_PAGE,
             label: PAGE_LABELS.LOGIN_PAGE
+        },
+        {
+            current: pageLabel === PAGE_LABELS.REGISTER_PAGE,
+            url: ROUTES.REGISTER_PAGE,
+            label: PAGE_LABELS.REGISTER_PAGE
         }
     ];
 
