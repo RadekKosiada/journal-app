@@ -24,6 +24,13 @@ export function LoginForm() {
                                 <FieldLabel htmlFor="username">Username</FieldLabel>
                                 <Input id="username" type="text" autoComplete="false" placeholder="Max Leiter" />
                                 <FieldDescription>
+                                    Enter your e-mail address.
+                                </FieldDescription>
+                            </Field>
+                            <Field>
+                                <FieldLabel htmlFor="email">Email</FieldLabel>
+                                <Input id="email" type="email" autoComplete="false" placeholder="your email" />
+                                <FieldDescription>
                                     Choose a unique username for your account.
                                 </FieldDescription>
                             </Field>
