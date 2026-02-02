@@ -18,11 +18,19 @@ export function RegisterForm() {
             <form>
                 <FieldGroup>
                     <FieldSet>
-                        <FieldLegend>Login</FieldLegend>
+                        <FieldLegend>Register</FieldLegend>
                         <FieldDescription>
-                            Enter your data to login to your account
+                            Enter your data to register a new account
                         </FieldDescription>
                         <FieldGroup>
+                            <Field>
+                                <FieldLabel htmlFor="username">Username</FieldLabel>
+                                <FieldDescription>
+                                    Choose a unique username for your account.
+                                </FieldDescription>
+                                <Input id="username" type="text" autoComplete="false" placeholder="Max Leiter" />
+
+                            </Field>
                             <Field>
                                 <FieldLabel htmlFor="email">Email</FieldLabel>
                                 <FieldDescription>
