@@ -51,7 +51,6 @@ export function RegisterForm() {
                                     Choose a unique username for your account.
                                 </FieldDescription>
                                 <Input id="username" type="text" autoComplete="false" placeholder="Max Leiter" />
-
                             </Field>
                             <Field>
                                 <FieldLabel htmlFor="email">Email</FieldLabel>
