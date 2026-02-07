@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
 ;
 
@@ -33,10 +33,9 @@ export function RegisterForm() {
         setError(error);
     }
 
-
     return (
         <div className="w-full max-w-md">
-            <form {...form} onSubmit={form.handleSubmit(onSubmit)}>
+            <form onSubmit={form.handleSubmit(onSubmit)}>
                 {error && <p className="text-red-500">{error}</p>}
                 <FieldGroup>
                     <FieldSet>
@@ -45,27 +44,46 @@ export function RegisterForm() {
                             Enter your data to register a new account
                         </FieldDescription>
                         <FieldGroup>
-                            <Field>
-                                <FieldLabel htmlFor="username">Username</FieldLabel>
-                                <FieldDescription>
-                                    Choose a unique username for your account.
-                                </FieldDescription>
-                                <Input id="username" type="text" autoComplete="false" placeholder="Max Leiter" />
-                            </Field>
-                            <Field>
-                                <FieldLabel htmlFor="email">Email</FieldLabel>
-                                <FieldDescription>
-                                    Enter your e-mail address.
-                                </FieldDescription>
-                                <Input id="email" type="email" autoComplete="false" placeholder="your email" />
-                            </Field>
-                            <Field>
-                                <FieldLabel htmlFor="password">Password</FieldLabel>
-                                <FieldDescription>
-                                    Must be at least 8 characters long.
-                                </FieldDescription>
-                                <Input id="password" type="password" autoComplete="false" placeholder="••••••••" />
-                            </Field>
+                            <Controller
+                                name="username"
+                                control={form.control}
+                                render={({ field }) => (
+                                    <Field>
+                                        <FieldLabel htmlFor="username">Username</FieldLabel>
+                                        <FieldDescription>
+                                            Choose a unique username for your account.
+                                        </FieldDescription>
+                                        <Input {...field} id="username" type="text" autoComplete="false" placeholder="Max Leiter" />
+                                    </Field>
+                                )}
+                            />
+                            <Controller
+                                name="email"
+                                control={form.control}
+                                render={({ field }) => (
+                                    <Field>
+                                        <FieldLabel htmlFor="email">Email</FieldLabel>
+                                        <FieldDescription>
+                                            Enter your e-mail address.
+                                        </FieldDescription>
+                                        <Input {...field} id="email" type="email" autoComplete="false" placeholder="your email" />
+                                    </Field>
+                                )}
+                            />
+                            <Controller
+                                name="password"
+                                control={form.control}
+                                render={({ field }) => (
+                                    <Field>
+                                        <FieldLabel htmlFor="password">Password</FieldLabel>
+                                        <FieldDescription>
+                                            Must be at least 8 characters long.
+                                        </FieldDescription>
+                                        <Input {...field} id="password" type="password" autoComplete="false" placeholder="••••••••" />
+                                    </Field>
+                                )}
+                            />
+
                         </FieldGroup>
                     </FieldSet>
                     <Field orientation="horizontal">
