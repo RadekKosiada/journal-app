@@ -24,14 +24,6 @@ export function RegisterForm() {
                         </FieldDescription>
                         <FieldGroup>
                             <Field>
-                                <FieldLabel htmlFor="username">Username</FieldLabel>
-                                <FieldDescription>
-                                    Choose a unique username for your account.
-                                </FieldDescription>
-                                <Input id="username" type="text" autoComplete="false" placeholder="Max Leiter" />
-
-                            </Field>
-                            <Field>
                                 <FieldLabel htmlFor="email">Email</FieldLabel>
                                 <FieldDescription>
                                     Enter your e-mail address.
