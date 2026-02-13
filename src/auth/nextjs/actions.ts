@@ -4,6 +4,7 @@ import { db } from "@/db";
 import { eq } from "drizzle-orm/sql/expressions/conditions";
 import { redirect } from "next/navigation";
 import { z } from "zod";
+import { generateSalt, hashPassword } from "../core/passwordHasher";
 import { usersTable } from "./../../db/schema/user_data";
 import { signInSchema, signUpSchema } from "./schemas";
 
@@ -20,6 +21,8 @@ export async function signUp(unsafeData: z.infer<typeof signUpSchema>) {
   if (existingUser !== null) {
     return "User with this email already exists";
   }
+
+  const hashedPassword = await hashPassword(data.password, generateSalt());
 
   redirect("/");
 }
